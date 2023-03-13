@@ -1,0 +1,14 @@
+{
+  "dbName":"tele",
+  "modelName":"kakuls",
+  "schema":{
+    "Id":{
+      "type":"string",
+      "unique":true
+    },
+    "name":{
+      "type":"string",
+      "unique":true
+    }
+  }
+}

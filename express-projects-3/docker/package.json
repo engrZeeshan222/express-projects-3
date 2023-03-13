@@ -1,0 +1,38 @@
+{
+  "name": "clothingapp",
+  "version": "version-1",
+  "description": "Gsoft Online Shopping App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon -L --experimental-modules --es-module-specifier-resolution=node    app.js",
+    "start-server": "node app.js",
+    "db:migrate" : "npx sequelize-cli db:migrate",
+    "db:migrate:undo:all"  : "npx sequelize-cli db:migrate:undo:all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Global-Software-Consulting/ClothingApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Global-Software-Consulting/ClothingApp/issues"
+  },
+  "homepage": "https://github.com/Global-Software-Consulting/ClothingApp#readme",
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.21.6"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@babel/core": "^7.19.0",
+    "@babel/node": "^7.18.10",
+    "@babel/preset-env": "^7.19.0",
+    "babel-register": "^6.26.0",
+    "sequelize-cli": "^6.4.1"
+  }
+}

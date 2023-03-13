@@ -1,0 +1,8 @@
+{
+  "connections": {
+    "production": {
+      "connection_string": "mongodb+srv://muhammadzeeshan:2MA3hOeupps80Ga1@cluster-news-app.jkccv.mongodb.net/test",
+      "connection_options": {}
+    }
+  }
+}

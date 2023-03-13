@@ -1,0 +1,1 @@
+{"modelName":"among","schema":{"Id":{"type":"string","unique":true},"name":{"type":"string","unique":true},"CreatedBy":{"type":"string","default":"00000000-0000-0000-0000-000000000000"},"ModifiedBy":{"type":"string","default":"00000000-0000-0000-0000-000000000000"},"Owner":{"type":"string","default":"00000000-0000-0000-0000-000000000000"}},"dbName":"tele"}

@@ -1,0 +1,11 @@
+{
+  "apps" : [
+              {
+              "name"            : "CloudApps",
+              "script"          : "app.js",
+              "instances"       : 1,
+              "exec_mode"       : "cluster",
+              "listen_timeout"  : 8000
+            }
+         ]
+}

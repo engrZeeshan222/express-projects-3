@@ -1,0 +1,303 @@
+<wsdl:definitions targetNamespace="E7DDCB7B-C840-42C8-981A-A0B8E572FE64/versie_0.3" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="E7DDCB7B-C840-42C8-981A-A0B8E572FE64/versie_0.3" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="E7DDCB7B-C840-42C8-981A-A0B8E572FE64/versie_0.3">
+      <s:element name="UploadDocuments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadData" type="tns:TUploadData"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TUploadData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EigenKenmerk" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="PI_Kenmerk" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceRequested" type="tns:TServiceRequested"/>
+          <s:element minOccurs="1" maxOccurs="1" name="DocumentSoort" type="tns:TDocumentSoort"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ConversionRequested" type="tns:TConversionRequested"/>
+          <s:element minOccurs="1" maxOccurs="1" name="AangifteJaar" type="s:unsignedInt"/>
+          <s:element minOccurs="1" maxOccurs="1" name="DocumentPeriode" type="tns:TDocumentPeriode"/>
+          <s:element minOccurs="1" maxOccurs="1" name="XMLSoort" type="tns:TXMLSoort"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Base64XML" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="PrintSoort" type="tns:TPrintSoort"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Base64Prints" type="tns:ArrayOfString"/>
+          <s:element minOccurs="0" maxOccurs="1" name="PartnerData" type="tns:TPartnerData"/>
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="TServiceRequested">
+        <s:restriction base="s:string">
+          <s:enumeration value="srAccorderingKlant"/>
+          <s:enumeration value="srVerzenden"/>
+          <s:enumeration value="srAccorderingVerzenden"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="TDocumentSoort">
+        <s:restriction base="s:string">
+          <s:enumeration value="dsNone"/>
+          <s:enumeration value="dsBTW"/>
+          <s:enumeration value="dsICL"/>
+          <s:enumeration value="dsIB"/>
+          <s:enumeration value="dsVPB"/>
+          <s:enumeration value="dsLoon"/>
+          <s:enumeration value="dsKvK"/>
+          <s:enumeration value="dsCBS"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="TConversionRequested">
+        <s:restriction base="s:string">
+          <s:enumeration value="crNone"/>
+          <s:enumeration value="crXBRL"/>
+          <s:enumeration value="crVIA"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="TDocumentPeriode">
+        <s:restriction base="s:string">
+          <s:enumeration value="dpNone"/>
+          <s:enumeration value="dpJANUARI"/>
+          <s:enumeration value="dpFEBRUARI"/>
+          <s:enumeration value="dpMAART"/>
+          <s:enumeration value="dpAPRIL"/>
+          <s:enumeration value="dpMEI"/>
+          <s:enumeration value="dpJUNI"/>
+          <s:enumeration value="dpJULI"/>
+          <s:enumeration value="dpAUGUSTUS"/>
+          <s:enumeration value="dpSEPTEMBER"/>
+          <s:enumeration value="dpOKTOBER"/>
+          <s:enumeration value="dpNOVEMBER"/>
+          <s:enumeration value="dpDECEMBER"/>
+          <s:enumeration value="dp1eKWARTAAL_JAN"/>
+          <s:enumeration value="dp1eKWARTAAL_FEB"/>
+          <s:enumeration value="dp1eKWARTAAL_MRT"/>
+          <s:enumeration value="dp2eKWARTAAL_APR"/>
+          <s:enumeration value="dp2eKWARTAAL_MEI"/>
+          <s:enumeration value="dp2eKWARTAAL_JUN"/>
+          <s:enumeration value="dp3eKWARTAAL_JUL"/>
+          <s:enumeration value="dp3eKWARTAAL_AUG"/>
+          <s:enumeration value="dp3eKWARTAAL_SEP"/>
+          <s:enumeration value="dp4eKWARTAAL_OKT"/>
+          <s:enumeration value="dp4eKWARTAAL_NOV"/>
+          <s:enumeration value="dp4eKWARTAAL_DEC"/>
+          <s:enumeration value="dpGEHEELJAAR"/>
+          <s:enumeration value="dpLangBoekjaar"/>
+          <s:enumeration value="dp1eHALFJAAR"/>
+          <s:enumeration value="dp2eHALFJAAR"/>
+          <s:enumeration value="dpProductiestatistiek"/>
+          <s:enumeration value="dpKorteTermijnstatistiek"/>
+          <s:enumeration value="dpInvesteringsstatistiek"/>
+          <s:enumeration value="dpWegvervoersstatistiek"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="TXMLSoort">
+        <s:restriction base="s:string">
+          <s:enumeration value="xsNone"/>
+          <s:enumeration value="xsXML"/>
+          <s:enumeration value="xsXBRL"/>
+          <s:enumeration value="xsEDIFACT"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="TPrintSoort">
+        <s:restriction base="s:string">
+          <s:enumeration value="psNone"/>
+          <s:enumeration value="psPDF"/>
+          <s:enumeration value="psRTF"/>
+          <s:enumeration value="psHTML"/>
+          <s:enumeration value="psTXT"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TPartnerData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BSNPartner" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="XMLSoort" type="tns:TXMLSoort"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Base64XML" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="PrintSoort" type="tns:TPrintSoort"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Base64Prints" type="tns:ArrayOfString"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UploadDocumentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadDocumentsResult" type="tns:TUploadResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TUploadResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Succes" type="s:unsignedInt"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Klaar" type="s:boolean"/>
+          <s:element minOccurs="0" maxOccurs="1" name="EigenKenmerk" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceRequested" type="tns:TServiceRequested"/>
+          <s:element minOccurs="0" maxOccurs="1" name="PI_Kenmerk" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="MetPartner" type="s:boolean"/>
+          <s:element minOccurs="0" maxOccurs="1" name="TijdStempel" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ServerKenmerk" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="FoutMelding" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServerKenmerk" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatusResult" type="tns:TStatusResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TStatusResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Succes" type="s:unsignedInt"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ServerKenmerk" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="StatusDocument" type="tns:TStatusDocument"/>
+          <s:element minOccurs="1" maxOccurs="1" name="MetPartner" type="s:boolean"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OTPKenmerkAangever" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OTPTijdStempelAangever" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OTPKenmerkPartner" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OTPTijdStempelPartner" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="FoutMelding" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="TStatusDocument">
+        <s:restriction base="s:string">
+          <s:enumeration value="sdNone"/>
+          <s:enumeration value="sdGeupload"/>
+          <s:enumeration value="sdValidatieFout"/>
+          <s:enumeration value="sdConversieFout"/>
+          <s:enumeration value="sdWachtOpKlant"/>
+          <s:enumeration value="sdAccord"/>
+          <s:enumeration value="sdNietAccord"/>
+          <s:enumeration value="sdVerstuurdOTP"/>
+          <s:enumeration value="sdGeaccepteerdOTP"/>
+          <s:enumeration value="sdVerworpenOTP"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetStatusExt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServerKenmerk" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatusExtResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatusExtResult" type="tns:TStatusResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UploadDocumentsSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadDocuments"/>
+  </wsdl:message>
+  <wsdl:message name="UploadDocumentsSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadDocumentsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatus"/>
+  </wsdl:message>
+  <wsdl:message name="GetStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatusResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetStatusExtSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatusExt"/>
+  </wsdl:message>
+  <wsdl:message name="GetStatusExtSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatusExtResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="UploadServiceSoap">
+    <wsdl:operation name="UploadDocuments">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Upload document based on ServiceRequested parameter.</wsdl:documentation>
+      <wsdl:input message="tns:UploadDocumentsSoapIn"/>
+      <wsdl:output message="tns:UploadDocumentsSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <wsdl:input message="tns:GetStatusSoapIn"/>
+      <wsdl:output message="tns:GetStatusSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusExt">
+      <wsdl:input message="tns:GetStatusExtSoapIn"/>
+      <wsdl:output message="tns:GetStatusExtSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UploadServiceSoap" type="tns:UploadServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="UploadDocuments">
+      <soap:operation soapAction="E7DDCB7B-C840-42C8-981A-A0B8E572FE64/versie_0.3/UploadDocuments" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <soap:operation soapAction="E7DDCB7B-C840-42C8-981A-A0B8E572FE64/versie_0.3/GetStatus" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusExt">
+      <soap:operation soapAction="E7DDCB7B-C840-42C8-981A-A0B8E572FE64/versie_0.3/GetStatusExt" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UploadServiceSoap12" type="tns:UploadServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="UploadDocuments">
+      <soap12:operation soapAction="E7DDCB7B-C840-42C8-981A-A0B8E572FE64/versie_0.3/UploadDocuments" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <soap12:operation soapAction="E7DDCB7B-C840-42C8-981A-A0B8E572FE64/versie_0.3/GetStatus" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusExt">
+      <soap12:operation soapAction="E7DDCB7B-C840-42C8-981A-A0B8E572FE64/versie_0.3/GetStatusExt" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UploadService">
+    <wsdl:port name="UploadServiceSoap" binding="tns:UploadServiceSoap">
+      <soap:address location="https://backend.cloudapps.services:7561/uploadservice/"/>
+    </wsdl:port>
+    <wsdl:port name="UploadServiceSoap12" binding="tns:UploadServiceSoap12">
+      <soap12:address location="https://backend.cloudapps.services:7561/uploadservice/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

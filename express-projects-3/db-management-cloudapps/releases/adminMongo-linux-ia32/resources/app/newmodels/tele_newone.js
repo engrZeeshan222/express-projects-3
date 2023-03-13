@@ -1,0 +1,1 @@
+{"dbName":"tele","modelName":"newone","schema":{"Id":{"type":"string","unique":true},"name":{"type":"string","unique":true}}}

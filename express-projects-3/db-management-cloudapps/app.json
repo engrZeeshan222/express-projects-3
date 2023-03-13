@@ -1,0 +1,6 @@
+{
+  "name": "mongo-ui-interface",
+  "description": "mongo-ui-interface is a Web based user interface (GUI) to handle all your MongoDB connections/databases needs.",
+  "logo": "https://raw.githubusercontent.com/mrvautin/mrvautin.github.io/master/images/adminMongo/adminMongo-Logo.png",
+  "keywords": ["node", "express", "mongodb"]
+}

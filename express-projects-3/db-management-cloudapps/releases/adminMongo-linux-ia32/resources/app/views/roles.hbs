@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="/css/custom.css">
+
+<div class="row">
+  <div class="col-lg-2"></div>
+  <div class="col-lg-8">
+  <div class="table-view" id="permissions">
+    {{#each permissions as |value key|}}
+
+    <h4>Role  - <span class="text-warning">{{value.name}}</span></h4>
+    <table class="panel panel-default table table-responsive" style="background-color:#fff;border-color: #e1e1e1;">
+        <thead>
+          <tr>
+            <th>Collections</th>
+            <th>READ</th>
+            <th>CREATE</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
+          </tr>
+        </thead>
+        <tbody>
+        {{#each permission as |childValue childKey|}}
+          <tr>
+            <td>{{childKey}}</td>
+            <td>
+              {{#if read}}
+                 <input type="checkbox" id="{{value.name}}-{{childKey}}-read" checked onChange=checkForValid('{{childKey}}','{{value.Id}}','read',false); />
+              {{else}}
+                 <input type="checkbox" id="{{value.name}}-{{childKey}}-read" onChange=checkForValid('{{childKey}}','{{value.Id}}','read',true); />
+              {{/if}}
+            </td>
+            <td>
+              {{#if create}}
+                 <input type="checkbox" id="{{value.name}}-{{childKey}}-create" checked onChange=checkForValid('{{childKey}}','{{value.Id}}','create',false); />
+              {{else}}
+                 <input type="checkbox" id="{{value.name}}-{{childKey}}-create" onChange=checkForValid('{{childKey}}','{{value.Id}}','create',true); />
+              {{/if}}
+            </td>
+            <td>
+              {{#if update}}
+                 <input type="checkbox" id="{{value.name}}-{{childKey}}-update" checked onChange=checkForValid('{{childKey}}','{{value.Id}}','update',false); />
+              {{else}}
+                 <input type="checkbox" id="{{value.name}}-{{childKey}}-update" onChange=checkForValid('{{childKey}}','{{value.Id}}','update',true); />
+              {{/if}}
+            </td>
+            <td>
+
+              {{#if delete}}
+                 <input type="checkbox" id="{{value.name}}-{{childKey}}-delete" checked onChange=checkForValid('{{childKey}}','{{value.Id}}','delete',false); />
+              {{else}}
+                 <input type="checkbox" id="{{value.name}}-{{childKey}}-delete" onChange=checkForValid('{{childKey}}','{{value.Id}}','delete',true); />
+              {{/if}}
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      {{/each}}
+    </div>
+  </div>
+</div>
+<div>
+
+</div>
